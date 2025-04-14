@@ -1,0 +1,5 @@
+{
+  "name": "bitter/redirector",
+  "type": "concrete5-package",
+  "description": "Easily create and manage 301 redirects directly in Concrete CMS—no .htaccess required. Ideal for SEO and site migrations, and works with any web server."
+}
