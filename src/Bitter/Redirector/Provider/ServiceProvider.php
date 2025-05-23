@@ -13,6 +13,7 @@ use Bitter\Redirector\Routing\RouteList;
 use Concrete\Core\Site\Config\Liaison;
 use Concrete\Core\Site\Service;
 use Concrete\Core\Support\Facade\Url;
+use Symfony\Component\HttpFoundation\Response;
 
 class ServiceProvider extends Provider
 {
@@ -47,7 +48,9 @@ class ServiceProvider extends Provider
     private function applyRedirects()
     {
         $pageRedirects = $this->siteConfig->get("redirector.page_redirects", []);
-        $r = Request::getInstance();
+        /** @var Request $r */
+        /** @noinspection PhpUnhandledExceptionInspection */
+        $r = $this->app->make(Request::class);
 
         foreach ($pageRedirects as $pageRedirect) {
             if (isset($pageRedirect["oldPath"]) &&
@@ -58,7 +61,7 @@ class ServiceProvider extends Provider
                 $targetPage = Page::getByID($pageRedirect["cID"]);
 
                 if ($targetPage instanceof Page && !$targetPage->isError()) {
-                    $this->responseFactory->redirect(Url::to($targetPage))->send();
+                    $this->responseFactory->redirect(Url::to($targetPage), Response::HTTP_TEMPORARY_REDIRECT)->send();
                     $this->app->shutdown();
                 }
             }

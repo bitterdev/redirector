@@ -1,6 +1,6 @@
 # Redirector 
 
-Redirector is a powerful Concrete CMS add-on that enables you to manage permanent 301 redirects directly from your website’s dashboard—without relying on .htaccess or server-side configurations. Unlike traditional redirect solutions that are limited to Apache, Redirector works on the core level, making it fully compatible with all web servers, including NGINX, LiteSpeed, and others.
+Redirector is a powerful Concrete CMS add-on that enables you to manage permanent 302 redirects directly from your website’s dashboard—without relying on .htaccess or server-side configurations. Unlike traditional redirect solutions that are limited to Apache, Redirector works on the core level, making it fully compatible with all web servers, including NGINX, LiteSpeed, and others.
 
 This makes it an essential tool for SEO-conscious site owners, especially during migrations, restructures, or domain changes. Redirector ensures that old URLs are seamlessly forwarded to their new destinations, preventing broken links, retaining traffic, and preserving search engine rankings.
 
