@@ -9,7 +9,7 @@ use Concrete\Core\Package\Package;
 class Controller extends Package
 {
     protected string $pkgHandle = 'redirector';
-    protected string $pkgVersion = '0.0.3';
+    protected string $pkgVersion = '0.0.4';
     protected $appVersionRequired = '9.0.0';
     protected $pkgAutoloaderRegistries = [
         'src/Bitter/Redirector' => 'Bitter\Redirector',
